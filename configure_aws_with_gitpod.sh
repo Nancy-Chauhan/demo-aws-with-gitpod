@@ -47,6 +47,7 @@ fi
 
 
 AWS_VARS=(AWS_SSO_URL AWS_SSO_REGION AWS_ACCOUNT_ID AWS_ROLE_NAME AWS_REGION)
+printenv
 
 for AWS_VAR in "${AWS_VARS[@]}"; do
   echo "$AWS_VAR is ${!AWS_VAR}"

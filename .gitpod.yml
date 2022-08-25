@@ -14,11 +14,16 @@
 
 tasks:
   - name: Initialize & Configure AWS
-    init: /bin/bash $GITPOD_REPO_ROOT/configure_aws_with_gitpod.sh
+    init: >
+      /bin/bash $GITPOD_REPO_ROOT/configure_aws_with_gitpod.sh &&
+      gp sync-done aws-setup
+
   - name: AWS SSO Login
+    init: gp sync-await aws-setup
     openMode: split-left
     command: aws sso login
   - name: Bash Terminal
+    init: gp sync-await aws-setup
     openMode: split-right
     command: bash
 
