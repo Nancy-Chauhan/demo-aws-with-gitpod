@@ -14,7 +14,7 @@
 
 tasks:
   - name: Initialize & Configure AWS
-    init: bash $GITPOD_REPO_ROOT/configure_aws_with_gitpod.sh
+    init: /bin/bash $GITPOD_REPO_ROOT/configure_aws_with_gitpod.sh
   - name: AWS SSO Login
     openMode: split-left
     command: aws sso login
