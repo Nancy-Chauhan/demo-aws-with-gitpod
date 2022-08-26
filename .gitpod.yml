@@ -14,8 +14,7 @@
 
 tasks:
   - name: Initialize & Configure AWS
-    init: >
-      /bin/bash $GITPOD_REPO_ROOT/configure_aws_with_gitpod.sh 
+    init: /bin/bash $GITPOD_REPO_ROOT/configure_aws_with_gitpod.sh 
     command: aws sso login
 
   - name: Bash Terminal
